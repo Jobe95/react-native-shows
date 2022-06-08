@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Keyboard,
@@ -20,7 +20,7 @@ export const SearchBar = ({
   onChangeText,
   hasConnection,
 }: Props) => {
-  const [text, setText] = useState<string>('');
+  const [text, setText] = React.useState<string>('');
 
   const onChange = (value: string) => {
     //TODO: When adding persistence remove this

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect} from 'react';
 import {
   Button,
   FlatList,
@@ -14,18 +14,18 @@ import {ShowModel} from '../models/ShowModel';
 import NetInfo from '@react-native-community/netinfo';
 
 export const HomePage = () => {
-  const listRef = useRef<FlatList>(null);
+  const listRef = React.useRef<FlatList>(null);
   // Todo: Use with endless scroll
-  const [page, setPage] = useState<number>(0);
-  const [shows, setShows] = useState<ShowModel[]>([]);
-  const [isConnected, setIsConnected] = useState<boolean | null>(true);
-  const [isError, setIsError] = useState<boolean>(false);
+  const [page, setPage] = React.useState<number>(0);
+  const [shows, setShows] = React.useState<ShowModel[]>([]);
+  const [isConnected, setIsConnected] = React.useState<boolean | null>(true);
+  const [isError, setIsError] = React.useState<boolean>(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetchShows(0);
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const unsubsscribe = NetInfo.addEventListener(state => {
       const connected = state.isConnected && state.isInternetReachable;
       setIsConnected(connected);

@@ -1,6 +1,6 @@
-Documentation
+# Documentation
 
-Implementation of AZ assignment.
+### Implementation of AZ assignment.
 
 Didnt have time for nice to have requirements thats why for example the heart icon does nothing on the ShowItems, same for page state variable in HomePage is not in use.
 
